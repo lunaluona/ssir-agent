@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 600px;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+
+    #card {
+      width: 600px;
+      height: 800px;
+      background: #1C3B8E;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Decorative blobs ─────────────────────────────── */
+    .blob {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .blob-tr { width: 480px; height: 480px; top: -200px; right: -180px; }
+    .blob-bl { width: 420px; height: 420px; bottom: -180px; left: -150px; }
+
+    /* ── CTA center area ──────────────────────────────── */
+    .cta-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* "今日互动" label: white bg + navy text */
+    .cta-label {
+      background: #FFFFFF;
+      color: #1C3B8E;
+      font-size: 20px;
+      font-weight: 900;
+      padding: 10px 32px;
+      border-radius: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* Question bubble: semi-transparent white */
+    .cta-question {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      font-size: 28px;
+      font-weight: 700;
+      padding: 24px 32px;
+      border-radius: 20px;
+      text-align: center;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    /* ── Bottom bar ────────────────────────────────────── */
+    .bottom-bar {
+      height: 56px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .hashtags {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1C3B8E;
+      letter-spacing: 0.3px;
+    }
+    .brand {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1C3B8E;
+      text-align: right;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div id="card">
+  <div class="blob blob-tr"></div>
+  <div class="blob blob-bl"></div>
+
+  <div class="cta-area">
+    <div class="cta-label">今日互动</div>
+    <div class="cta-question">PLACEHOLDER_QUESTION</div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hashtags">PLACEHOLDER_HASHTAGS</span>
+    <span class="brand">SSIR<br>中文</span>
+  </div>
+</div>
+</body>
+</html>

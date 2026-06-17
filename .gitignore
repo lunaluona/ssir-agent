@@ -1,0 +1,23 @@
+# Web app (Next.js)
+web/
+
+# Generated content and source materials
+data/
+
+# Local Claude settings (API keys, personal config)
+.claude/settings.local.json
+.claude/settings.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,23 @@
+{
+  "terms": {
+    "venture philanthropy": "公益创投",
+    "venture philanthrophy": "公益创投",
+    "system change": "系统性变化",
+    "systems change": "系统性变化",
+    "change": "转型",
+    "theory of change": "变革理论",
+    "social change": "社会正向变化",
+    "board": "理事会",
+    "board member": "理事会成员",
+    "board of directors": "理事会"
+  },
+  "rules": [
+    "默认 'change' 译为'转型'，避免'变革'",
+    "唯独 'theory of change' 是固定译法'变革理论'",
+    "如果一个词在'terms'中找不到，先在文中保留英文括号注释，再人工补充进表"
+  ],
+  "_extend_here": {
+    "comment": "在本节添加新术语，下次运行时合并到 terms。命名空间预留：",
+    "pending": {}
+  }
+}

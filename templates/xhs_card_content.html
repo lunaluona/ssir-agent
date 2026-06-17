@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 600px;
+      font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+
+    #card {
+      width: 600px;
+      height: 800px;
+      background: #1C3B8E;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Subtle decorative blobs (low-opacity white circles) ─ */
+    .blob {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .blob-tr { width: 400px; height: 400px; top: -150px; right: -130px; }
+    .blob-bl { width: 340px; height: 340px; bottom: -120px; left: -100px; }
+    .blob-mid { width: 200px; height: 200px; top: 280px; right: -60px;
+                background: rgba(255,255,255,0.04); }
+
+    /* ── Main content ──────────────────────────────────────── */
+    .content {
+      flex: 1;
+      padding: 44px 40px 16px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Number badge: white pill with navy text */
+    .badge {
+      display: inline-flex;
+      align-items: baseline;
+      background: #FFFFFF;
+      color: #1C3B8E;
+      font-size: 44px;
+      font-weight: 900;
+      padding: 4px 16px 8px;
+      border-radius: 10px;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+
+    /* Card title */
+    .card-title {
+      font-size: 46px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-top: 14px;
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+
+    /* Subtitle */
+    .card-subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    /* Points */
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 0;
+    }
+    .point-emoji {
+      font-size: 22px;
+      line-height: 1.6;
+      flex-shrink: 0;
+    }
+    .point-body {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .point-label {
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    /* Dashed separator */
+    .point-sep {
+      height: 1px;
+      background: repeating-linear-gradient(
+        90deg,
+        rgba(255,255,255,0.25) 0px, rgba(255,255,255,0.25) 5px,
+        transparent 5px, transparent 10px
+      );
+    }
+
+    /* ── Bottom bar: white strip ───────────────────────────── */
+    .bottom-bar {
+      height: 56px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .hashtags {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1C3B8E;
+      letter-spacing: 0.3px;
+    }
+    .brand {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1C3B8E;
+      text-align: right;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<div id="card">
+  <div class="blob blob-tr"></div>
+  <div class="blob blob-bl"></div>
+  <div class="blob blob-mid"></div>
+
+  <div class="content">
+    <div class="badge">PLACEHOLDER_NUMBER</div>
+    <div class="card-title">PLACEHOLDER_TITLE</div>
+    <div class="card-subtitle">PLACEHOLDER_SUBTITLE</div>
+    <div class="points-list">PLACEHOLDER_POINTS_HTML</div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="hashtags">PLACEHOLDER_HASHTAGS</span>
+    <span class="brand">SSIR<br>中文</span>
+  </div>
+</div>
+</body>
+</html>
