@@ -19,7 +19,7 @@
 | `@article-curator` | 整理人工提供的全文 | 粘贴正文后 |
 | `@wechat-editor` | 编译公众号长文 | 主对话指派 |
 | `@xhs-writer` | 改写小红书笔记 + 图像 prompt | 主对话指派 |
-| `@xhs-image-designer` | 调 baoyu skills 生成图片 | xhs-writer 完成后 |
+| `@xhs-image-designer` | 调 /guizang skill 生成配图 | xhs-writer 完成后 |
 
 主对话（你 + Claude Code 主会话）是 orchestrator——通过 `/weekly` 命令一键拉起，或单独 `@xxx` 调度。
 

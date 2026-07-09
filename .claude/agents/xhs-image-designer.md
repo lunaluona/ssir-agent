@@ -1,6 +1,6 @@
 ---
 name: xhs-image-designer
-description: 根据 xhs.json 生成全套小红书配图（封面 + 正文图卡 + 互动卡）。调用 /guizang skill，基于 HTML+Playwright 渲染为 PNG。**触发**：用户说"生成图片"、"@xhs-image-designer XX"、"做配图"，或 xhs-writer 完成后调用。
+description: 根据 xhs.json 生成全套小红书配图（封面 + 正文图卡 + 互动卡）。统一使用 /guizang skill（替代原 xhs-cover-maker / xhs-images-maker），基于 HTML+Playwright 渲染为 PNG。**触发**：用户说"生成图片"、"@xhs-image-designer XX"、"做配图"，或 xhs-writer 完成后调用。
 tools: Read, Write, Bash, SlashCommand
 ---
 
@@ -37,10 +37,17 @@ xhs.json 路径：data/output/{week}/{slug}/xhs.json
 封面设计规范（重要）：
 - 无内容目录，不放任何条目列表
 - 插图区：如 PDF 中有插图请提取使用，否则留白纸感空间
-- 插图占满中间区域（flex:1 1 auto，mix-blend-mode:multiply）
+- 插图占满中间区域（flex:1 1 auto，mix-blend-mode:multiply 仅用于白底线稿，彩色照片不用）
 - 底部来源/作者三行，mono 灰色字体
 
-PDF 路径（用于提取插图）：{PDF 绝对路径，如有}
+正文图卡配图规范（重要，图2至图4必须执行）：
+- 封面和互动卡除外，其余每张图卡**必须**从网络图库（Pexels 优先，其次 Unsplash）找一张相关配图，嵌入卡片中以丰富画面
+- 关键字用英文搜索（主题词 + 场景词），找到后下载至 guizang/assets/，并记录在 SOURCES.md
+- 图片放置：图卡上方或右侧区域，高度 150-250px，不遮挡文字主体
+- 彩色照片不使用 mix-blend-mode:multiply
+- 若某张图卡内容以数据为主（数字 / 图表），可用抽象/背景感强的图片，不必强求有人物或场景
+
+PDF 路径（用于提取封面插图）：{PDF 绝对路径，如有}
 
 风格：Forest Ink 主题，Editorial Magazine × E-ink 风格
 ```
@@ -71,8 +78,8 @@ cd data/output/{week}/{slug}/guizang && python3 render.py
 - 主色调：`--paper: #f5f1e8`（米白）/ `--ink: #16251b`（墨绿黑）/ `--accent: #2e6b4f`（森林绿）
 - 字体：Noto Serif SC（正文）+ IBM Plex Mono（标签/元数据）
 - 背景：CSS 纸张纹理（水平纤维 + 斜向交叉纹 + 边缘晕影），不使用 WebGL
-- 封面插图：使用 PDF 提取图（`mix-blend-mode:multiply`，仅白底线稿适用）或 Pexels 免费图库
-- 非封面图卡可加配图（Pexels 免费可商用），图片高度 100–200px
+- 封面插图：使用 PDF 提取图（`mix-blend-mode:multiply` 仅白底线稿适用，彩色照片不用）或 Pexels/Unsplash 免费图库
+- 正文图卡（图2至图4）**必须**从 Pexels/Unsplash 找配图，图片高度 150–250px，每张卡一张，记录来源至 SOURCES.md
 
 ---
 
