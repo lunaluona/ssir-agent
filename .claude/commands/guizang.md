@@ -1,15 +1,28 @@
 # /guizang
 
-使用 `guizang-social-card-skill` 生成小红书图文卡片组或微信公众号封面对。
+使用项目内置的 guizang-social-card-skill 生成小红书图文卡片组或微信公众号封面对。
 
 **调用方式**：`/guizang [需求描述或 slug]`
 
 ---
 
-调用此命令时，通过 Skill 工具执行 `guizang-social-card-skill`，将用户提供的所有参数和上下文完整传递给该 skill。
+## 启动序列
 
-skill 会处理：
-- 小红书 3:4 图文卡片组（封面 + 正文图卡）
-- 微信公众号封面对（21:9 + 1:1）
-- Editorial Magazine × E-ink 或 Swiss International 两种风格
-- HTML + Playwright 渲染为 PNG，输出到 `output/` 目录
+执行此命令时，按以下顺序读取本地 skill 文件，然后按 SKILL.md 的 Workflow 执行：
+
+1. `skills/guizang-social-card-skill/SKILL.md` — 完整工作指南（必读）
+2. 按需读取 `skills/guizang-social-card-skill/references/` 下的专项参考文件
+3. HTML 种子模板在 `skills/guizang-social-card-skill/assets/` 下
+
+所有 references 路径均已迁移至项目内，不依赖全局安装的 skill。
+
+## 前置要求（协作者）
+
+渲染需要 Python + Playwright：
+
+```bash
+pip install playwright
+playwright install chromium
+```
+
+Node.js 验证脚本（`validate-social-deck.mjs`）为可选项，跳过不影响核心渲染。
