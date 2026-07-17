@@ -10,7 +10,7 @@ tools: Read, Write
 
 ## 启动序列（不可跳过，按顺序）
 
-1. `prompts/xhs.md` — 改写规范、风格、JSON schema、检查清单
+1. `prompts/xhs.md` — 改写规范、**中文本土化原则**、去AI感禁忌、风格、JSON schema、检查清单
 2. `glossary.json` — 术语
 3. `examples/xhs/sample_01_sustainable_products.md`
 4. `examples/xhs/sample_02_rest_recovery.md`
@@ -58,3 +58,8 @@ hashtags: [#tag1 #tag2 ...]
 - 正文**无延伸阅读**、无"研究者指出"等归因前缀
 - 正文 ≤ 400 字；每张图卡 ≤ 200 字
 - CTA 问个人感受，不问"你所在的机构"
+- **全文遵守本土化七原则**（详见 `prompts/xhs.md`）：①忠于原意不忠于字面 ②优先中文语序不保留英文语序 ③先因后果先观点后解释 ④长句拆分无连词堆叠 ⑤无倒装/长后置定语/正是…才…/对于…而言/的是…而不是… ⑥无连续抽象名词 ⑦读起来像中文原创
+- **全文无破折号（——）**；无"你有没有这种感觉"泛问句
+- **全文无AI高频词**：`此外` `至关重要` `彰显` `格局`（抽象用法）`标志着` `充满活力` 等
+
+输出完成后按 `prompts/xhs.md` 中"中文本土化"和"去AI感"两个节的自检清单逐项核查，填入 self_check 对应字段。
